@@ -4,13 +4,15 @@ import io.nextweb.fn.Closure;
 import io.nextweb.fn.SuccessFail;
 import de.mxro.firewall.CheckCallback;
 import de.mxro.firewall.Rule;
+import de.mxro.httpserver.HttpService;
 import de.mxro.httpserver.Request;
 import de.mxro.httpserver.Response;
-import de.mxro.httpserver.StoppableService;
+import de.mxro.service.callbacks.ShutdownCallback;
+import de.mxro.service.callbacks.StartCallback;
 
-public class ProtectedService implements StoppableService {
+public class ProtectedService implements HttpService {
 
-	private final StoppableService decorated;
+	private final HttpService decorated;
 	private final Rule rule;
 
 	@Override
@@ -48,13 +50,18 @@ public class ProtectedService implements StoppableService {
 	}
 
 	@Override
-	public void stop(Closure<SuccessFail> callback) {
+	public void stop(ShutdownCallback callback) {
 
 		decorated.stop(callback);
 
 	}
 
-	public ProtectedService(StoppableService decorated, Rule rule) {
+	@Override
+	public void start(StartCallback callback) {
+		decorated.start(callback);
+	}
+
+	public ProtectedService(HttpService decorated, Rule rule) {
 		super();
 		this.decorated = decorated;
 		this.rule = rule;
