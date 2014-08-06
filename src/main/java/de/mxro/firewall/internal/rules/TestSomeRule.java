@@ -1,6 +1,6 @@
 package de.mxro.firewall.internal.rules;
 
-import io.nextweb.fn.callbacks.ValueCallback;
+import de.mxro.async.callbacks.ValueCallback;
 import de.mxro.firewall.CheckCallback;
 import de.mxro.firewall.Rule;
 import de.mxro.firewall.rules.RequestFilter;
