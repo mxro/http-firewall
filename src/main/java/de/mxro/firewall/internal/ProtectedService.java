@@ -1,5 +1,6 @@
 package de.mxro.firewall.internal;
 
+import de.mxro.async.callbacks.SimpleCallback;
 import de.mxro.firewall.CheckCallback;
 import de.mxro.firewall.Rule;
 import de.mxro.fn.Closure;
@@ -8,7 +9,6 @@ import de.mxro.httpserver.HttpService;
 import de.mxro.httpserver.Request;
 import de.mxro.httpserver.Response;
 import de.mxro.service.callbacks.ShutdownCallback;
-import de.mxro.service.callbacks.StartCallback;
 
 public class ProtectedService implements HttpService {
 
@@ -57,7 +57,7 @@ public class ProtectedService implements HttpService {
 	}
 
 	@Override
-	public void start(StartCallback callback) {
+	public void start(SimpleCallback callback) {
 		decorated.start(callback);
 	}
 
