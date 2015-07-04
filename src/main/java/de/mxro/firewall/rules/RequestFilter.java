@@ -1,7 +1,7 @@
 package de.mxro.firewall.rules;
 
-import de.mxro.async.callbacks.ValueCallback;
 import de.mxro.httpserver.Request;
+import delight.async.callbacks.ValueCallback;
 
 public interface RequestFilter {
 

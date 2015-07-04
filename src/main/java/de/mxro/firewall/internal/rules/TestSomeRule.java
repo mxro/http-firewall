@@ -1,11 +1,11 @@
 package de.mxro.firewall.internal.rules;
 
-import de.mxro.async.callbacks.ValueCallback;
 import de.mxro.firewall.CheckCallback;
 import de.mxro.firewall.Rule;
 import de.mxro.firewall.rules.RequestFilter;
 import de.mxro.httpserver.Request;
 import de.mxro.httpserver.Response;
+import delight.async.callbacks.ValueCallback;
 
 /**
  * Apply a decorated rule to some requests, which match a filter.
