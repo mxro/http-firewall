@@ -1,13 +1,14 @@
 package de.mxro.firewall.internal;
 
+import delight.async.callbacks.SimpleCallback;
+import delight.functional.Closure;
+import delight.functional.SuccessFail;
+
 import de.mxro.firewall.CheckCallback;
 import de.mxro.firewall.Rule;
 import de.mxro.httpserver.HttpService;
 import de.mxro.httpserver.Request;
 import de.mxro.httpserver.Response;
-import delight.async.callbacks.SimpleCallback;
-import delight.functional.Closure;
-import delight.functional.SuccessFail;
 
 public class ProtectedService implements HttpService {
 
